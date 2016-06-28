@@ -1,5 +1,5 @@
 // Filename: form-urldecoded.js  
-// Timestamp: 2016.04.28-13:17:16 (last modified)
+// Timestamp: 2016.06.28-11:21:02 (last modified)
 // Author(s): bumblehead <chris@bumblehead.com>  
 
 var formurldecoded = module.exports = function (uri, ishash) {
@@ -16,10 +16,18 @@ var formurldecoded = module.exports = function (uri, ishash) {
     if (args && (args = args.split(/&/))) {
         uriVals = args.reduce(function (uriVals, argpair) {
             var arg = argpair.split(/=/),
-                key = arg[0],
+                key = String(arg[0]),
                 val = decodeURIComponent(arg[1].replace(/\+/g, ''));
-            
-            uriVals[key + ''] = isNaN(+val) ? val : +val;
+
+            if (!isNaN(+val)) {
+                uriVals[key] = +val;
+            } else if (val === 'true') {
+                uriVals[key] = true;
+            } else if (val === 'false') {
+                uriVals[key] = false;                
+            } else {
+                uriVals[key] = val;
+            }
             
             return uriVals;
         }, uriVals);
