@@ -11,7 +11,7 @@ const formurldecoded = module.exports = (uri, ishash) => {
   }
 
   uri = uri.replace(/#.*$/, ''); // remove hash
-  args = uri.match(/\?/) && uri.replace(/^[^?]*\?/, '');
+  args = uri.replace(/^[^?]*\?/, '');
   
   if (args && (args = args.split(/&/))) {
     uriVals = args.reduce((uriVals, argpair) => {
