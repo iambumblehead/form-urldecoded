@@ -73,7 +73,8 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
         ? value === "true"
         : value === "null" || !value ? null : value;
 
-  data = decode( rmHash( rmLead( data ) ) );
+  data = typeof data === 'string'
+    ? decode( rmHash( rmLead( data ) ) ) : '';
   
   return split( data ).reduce((uriVals, param) => {
     const [key, val] = splitKeyVal( param );
