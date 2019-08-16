@@ -1,48 +1,20 @@
 form-urldecoded
 ===============
-**(c)[Bumblehead][0], 2016** [MIT-license](#license)
+**(c)[Bumblehead][0]** [MIT-license](#license)
 
-simple and generalised query string parsing.
-
-```javascript
-function (uri, ishash) {
-    var args,
-        uriVals = {};
-
-    if (ishash) {
-        uriVals.hash = uri.replace(/[^#]*#?/, '');
-    }
-
-    uri = uri.replace(/#.*$/, ''); // remove hash
-    args = uri.match(/\?/) && uri.replace(/^[^?]*\?/, '');
-    
-    if (args && (args = args.split(/&/))) {
-        uriVals = args.reduce(function (uriVals, argpair) {
-            var arg = argpair.split(/=/),
-                key = arg[0],
-                val = decodeURIComponent(arg[1].replace(/\+/g, ''));
-            
-            uriVals[key + ''] = isNaN(+val) ? val : +val;
-            
-            return uriVals;
-        }, uriVals);
-    }
-    return uriVals;
-}
-```
+[![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://travis-ci.org/iambumblehead/form-urldecoded.svg?branch=master)](https://travis-ci.org/iambumblehead/form-urldecoded)
 
 
+simple and generalised query string parsing. Returns a query string as a flat object.
 
 [0]: http://www.bumblehead.com                            "bumblehead"
-[7]: https://raw.githubusercontent.com/iambumblehead/es5classic/master/es5classic_120x120.png
 
 
-![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)[![es5 classic][7]][7] 
-
+![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)[!
 
 (The MIT License)
 
-Copyright (c) 2016 [Bumblehead][0] <chris@bumblehead.com>
+Copyright (c) [Bumblehead][0] <chris@bumblehead.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
