@@ -44,6 +44,9 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
 
   const decode = str => decodeURIComponent(String(str)).replace(/\+/g, ' ');
 
+  // remove question mark char
+  const rmLead = str => str.replace(/[^=]*\?([\s\S]*)/, (m, s) => s);
+  
   const parseValue = value =>
     !isNaN(+value)
       ? +value
@@ -52,12 +55,9 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
         : value === "null" || !value ? null : value;
 
   
-  data = decode( rmHash( data ) );
+  data = decode( rmHash( rmLead( data ) ) );
 
-  const indexPercent = data.indexOf("?");
-  const args = indexPercent > -1 ? data.substring(indexPercent + 1) : data;
-  
-  return args.split("&").reduce((uriVals, param) => {
+  return data.split("&").reduce((uriVals, param) => {
     const [key, val] = param.split(/=/);
     const value = parseValue(val);
     return value != null || !ignoreNull ? assignValue(key, value, uriVals) : uriVals;
