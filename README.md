@@ -1,6 +1,6 @@
 form-urldecoded
 ===============
-**(c)[JBlashill][1], [Bumblehead][0]** [MIT-license](#license)
+**(c)[Frabarz][1], [Bumblehead][0]** [MIT-license](#license)
 
 [![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://travis-ci.org/iambumblehead/form-urldecoded.svg?branch=master)](https://travis-ci.org/iambumblehead/form-urldecoded)
 
