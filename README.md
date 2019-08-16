@@ -1,6 +1,6 @@
 form-urldecoded
 ===============
-**(c)[Bumblehead][0]** [MIT-license](#license)
+**(c)[JBlashill][1], [Bumblehead][0]** [MIT-license](#license)
 
 [![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://travis-ci.org/iambumblehead/form-urldecoded.svg?branch=master)](https://travis-ci.org/iambumblehead/form-urldecoded)
 
@@ -8,6 +8,7 @@ form-urldecoded
 simple and generalised query string parsing. Returns a query string as a flat object.
 
 [0]: http://www.bumblehead.com                            "bumblehead"
+[1]: https://frabarz.cl/                                     "frabarz"
 
 
 ![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)[!

@@ -7,6 +7,12 @@
     "type": "git",
     "url": "https://github.com/iambumblehead/form-urldecoded.git"
   },
+  "contributors": [
+    {
+      "name": "Frabarz",
+      "email": "francisco@datawheel.us"
+    }
+  ],
   "keywords": [
     "decode",
     "query string"
