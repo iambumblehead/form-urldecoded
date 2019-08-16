@@ -33,7 +33,9 @@ describe("formurldecoded", () => {
 
        expect(
            uriobj.data
-       ).toBe('[{"e"%3A{"et"%3A"shop"%2C"ref"%3A"%24pageName%24%3Fv%3D8%26id%3Durl%26event%3DVIEW%26time%3D1564394439489%26idlist%3Diid"%2C"t"%3A1564394439489%2C"spm"%3A"H5.b.c.d.95025060"%2C"referer"%3A""}}]');
+       ).toBe(
+         '[{"e":{"et":"shop","ref":"$pageName$?v=8&id=url&event=VIEW&time=1564394439489&idlist=iid","t":1564394439489,"spm":"H5.b.c.d.95025060","referer":""}}]'
+       );
     });
 });
 
