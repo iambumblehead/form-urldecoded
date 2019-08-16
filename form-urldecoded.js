@@ -44,15 +44,14 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
 
   const decode = str => decodeURIComponent(String(str)).replace(/\+/g, ' ');
 
-  // remove question mark char
+  // remove question mark char not nested in querystring
   const rmLead = str => str.replace(/[^=]*\?([\s\S]*)/, (m, s) => s);
 
-  // split string w/ '&' not found in string
+  // split string w/ '&' not found in nested quotation
   const split = ( str, parts = [] ) => {
     if ( !str )
       return parts;
 
-    // var match = str.match(/^([^"]*)&([^"&]*)/);
     var match = str.match(/^([^"&]*)&([\s\S]*)/);
 
     if ( match )
