@@ -46,6 +46,26 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
 
   // remove question mark char
   const rmLead = str => str.replace(/[^=]*\?([\s\S]*)/, (m, s) => s);
+
+  // split string w/ '&' not found in string
+  const split = ( str, parts = [] ) => {
+    if ( !str )
+      return parts;
+
+    // var match = str.match(/^([^"]*)&([^"&]*)/);
+    var match = str.match(/^([^"&]*)&([\s\S]*)/);
+
+    if ( match )
+      return split( match[2], parts.concat(match[1]) );
+    
+    return split( null, parts.concat( str ) );
+  };
+
+  const splitKeyVal = str => {
+    var match = str.match(/^([^"=]*)=([\s\S]*)/);
+
+    return match ? match.slice(1) : [str];
+  };
   
   const parseValue = value =>
     !isNaN(+value)
@@ -54,11 +74,10 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
         ? value === "true"
         : value === "null" || !value ? null : value;
 
-  
   data = decode( rmHash( rmLead( data ) ) );
-
-  return data.split("&").reduce((uriVals, param) => {
-    const [key, val] = param.split(/=/);
+  
+  return split( data ).reduce((uriVals, param) => {
+    const [key, val] = splitKeyVal( param );
     const value = parseValue(val);
     return value != null || !ignoreNull ? assignValue(key, value, uriVals) : uriVals;
   }, {});
