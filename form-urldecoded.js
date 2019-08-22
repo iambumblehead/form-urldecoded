@@ -39,6 +39,33 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
       : [key];
   };
 
+
+  const rmHash = str => String(str).replace(/#.*$/, '');
+
+  const decode = str => decodeURIComponent(String(str)).replace(/\+/g, ' ');
+
+  // remove question mark char not nested in querystring
+  const rmLead = str => str.replace(/[^=]*\?([\s\S]*)/, (m, s) => s);
+
+  // split string w/ '&' not found in nested quotation
+  const split = ( str, parts = [] ) => {
+    if ( !str )
+      return parts;
+
+    var match = str.match(/^([^"&]*)&([\s\S]*)/);
+
+    if ( match )
+      return split( match[2], parts.concat(match[1]) );
+    
+    return split( null, parts.concat( str ) );
+  };
+
+  const splitKeyVal = str => {
+    var match = str.match(/^([^"=]*)=([\s\S]*)/);
+
+    return match ? match.slice(1) : [str];
+  };
+  
   const parseValue = value =>
     !isNaN(+value)
       ? +value
@@ -46,12 +73,11 @@ const formurldecoded = (module.exports = (data, opts = {}) => {
         ? value === "true"
         : value === "null" || !value ? null : value;
 
-  data = decodeURI(`${data}`.replace(/#.*$/, "")).replace(/\+/g, " ");
-  const indexPercent = data.indexOf("?");
-  const args = indexPercent > -1 ? data.substring(indexPercent + 1) : data;
+  data = typeof data === 'string'
+    ? decode( rmHash( rmLead( data ) ) ) : '';
   
-  return args.split("&").reduce((uriVals, param) => {
-    const [key, val] = param.split(/=/);
+  return split( data ).reduce((uriVals, param) => {
+    const [key, val] = splitKeyVal( param );
     const value = parseValue(val);
     return value != null || !ignoreNull ? assignValue(key, value, uriVals) : uriVals;
   }, {});
