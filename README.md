@@ -5,7 +5,7 @@ form-urldecoded
 [![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://travis-ci.org/iambumblehead/form-urldecoded.svg?branch=master)](https://travis-ci.org/iambumblehead/form-urldecoded)
 
 
-simple and generalised query string parsing. Returns a query string as a flat object.
+Returns a query string as an object.
 
 [0]: http://www.bumblehead.com                            "bumblehead"
 [1]: https://frabarz.cl/                                     "frabarz"
