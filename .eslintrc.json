@@ -29,7 +29,7 @@
     "global-require": 0,
     "no-sequences": 0,
     "strict": [2, "never"],
-    "one-var": [2, {
+    "one-var": [0, {
       "let": "always",
       "const": "always"
     }],
@@ -39,7 +39,7 @@
       "flatTernaryExpressions": true,
       "VariableDeclarator": {
         "let": 2,
-        "const": 1
+        "const": "first"
       }
     }],
     "camelcase": 0,

@@ -5,13 +5,13 @@ form-urldecoded
 [![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://travis-ci.org/iambumblehead/form-urldecoded.svg?branch=master)](https://travis-ci.org/iambumblehead/form-urldecoded)
 
 
-Returns a query string as an object.
+Returns a [query string][2] as an object.
 
 [0]: http://www.bumblehead.com                            "bumblehead"
 [1]: https://frabarz.cl/                                     "frabarz"
+[2]: https://github.com/iambumblehead/form-urlencoded     "urlencoded"
 
-
-![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)[!
+![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)
 
 (The MIT License)
 
