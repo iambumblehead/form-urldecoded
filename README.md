@@ -5,7 +5,20 @@ form-urldecoded
 [![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://travis-ci.org/iambumblehead/form-urldecoded.svg?branch=master)](https://travis-ci.org/iambumblehead/form-urldecoded)
 
 
-Returns a [query string][2] as an object.
+Returns an object from a [query string.][2]
+
+``` json
+console.log(formurldecoded(
+  'www.myurl.com?'
+    + 'arr%5B%5D=3&arr%5B%5D%5Bprop%5D=false&arr%5B%5D=1&arr'
+    + '%5B%5D=6&num=0&obj%5Bprop2%5D%5B%5D=elem&str=val'));
+// {
+//   obj: { prop2: ['elem'] },
+//   arr: [ 3, { prop: false }, 1, 6 ],
+//   num: 0,
+//   str: 'val'
+// }
+```
 
 [0]: http://www.bumblehead.com                            "bumblehead"
 [1]: https://frabarz.cl/                                     "frabarz"

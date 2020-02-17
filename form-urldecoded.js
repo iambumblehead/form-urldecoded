@@ -11,7 +11,7 @@ module.exports = data => {
 
   const rmLead = str => str.replace(headQueryRe, (m, s) => s);
 
-  const decode = str => decodeURIComponent(str).replace(/\+/g, ' ');
+  const decode = str => decodeURIComponent(str.replace(/\+/g, ' '));
 
   const splitKeyVal = (str, match = str.match(keyValRe)) =>
     match ? match.slice(1) : [str];
