@@ -6,8 +6,7 @@ form-urldecoded
 
 
 Returns an object from a [query string.][2]
-
-``` json
+``` javascript
 console.log(formurldecoded(
   'www.myurl.com?'
     + 'arr%5B%5D=3&arr%5B%5D%5Bprop%5D=false&arr%5B%5D=1&arr'
