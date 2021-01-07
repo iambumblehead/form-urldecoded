@@ -1,6 +1,6 @@
 {
   "name": "form-urldecoded",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "readmeFilename": "README.md",
   "description": "decode url query string",
