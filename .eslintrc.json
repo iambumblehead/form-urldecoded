@@ -3,10 +3,9 @@
   "env": {
     "browser": true
   },
-  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "script",
-    "allowImportExportEverywhere": true
+    "ecmaVersion": 2015
   },
   "globals": {
     "jasmine": false,
