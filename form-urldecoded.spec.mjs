@@ -2,8 +2,8 @@
 // Timestamp: 2016.04.28-13:20:22 (last modified)
 // Author(s): bumblehead <chris@bumblehead.com>
 
-const test = require('ava');
-const formurldecoded = require('.');
+import test from 'ava';
+import formurldecoded from './form-urldecoded.js';
 
 test("should decode a query string", t => {
   t.deepEqual(formurldecoded('www.myurl.com?param1=1&param2=two'), {
