@@ -1,4 +1,4 @@
-module.exports = data => {
+export default data => {
   const keyValRe = /^([^"=]*)=([\s\S]*)/,
         keyRemRe = /([^[]*)\[([^"\]]*)?\]([\s\S]*)?/,
         headQueryRe = /[^=]*\?([\s\S]*)/,

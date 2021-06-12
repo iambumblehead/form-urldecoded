@@ -1,6 +1,6 @@
 {
   "name": "form-urldecoded",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "readmeFilename": "README.md",
   "description": "decode url query string",
@@ -37,7 +37,7 @@
   ],
   "devDependencies": {
     "ava": "^4.0.0-alpha.2",
-    "eslint": "^7.26.0"
+    "eslint": "^7.28.0"
   },
   "scripts": {
     "test": "ava form-urldecoded.spec.mjs",
