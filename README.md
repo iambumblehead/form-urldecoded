@@ -21,9 +21,9 @@ console.log(formurldecoded(
 
 [0]: http://www.bumblehead.com                            "bumblehead"
 [1]: https://frabarz.cl/                                     "frabarz"
-[2]: https://github.com/iambumblehead/form-urlencoded     "urlencoded"
+[2]: https://github.com/iambumblehead/form-urldecoded     "urldecoded"
 
-![scrounge](https://github.com/iambumblehead/scroungejs/raw/master/img/hand.png)
+![scrounge](https://github.com/iambumblehead/scroungejs/raw/main/img/hand.png)
 
 (The MIT License)
 

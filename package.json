@@ -1,6 +1,6 @@
 {
   "name": "form-urldecoded",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "license": "MIT",
   "readmeFilename": "README.md",
   "description": "decode url query string",
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/iambumblehead/form-urldecoded.git"
+    "url": "git+https://github.com/iambumblehead/form-urldecoded.git"
   },
   "contributors": [
     {
@@ -36,11 +36,10 @@
     "query string"
   ],
   "devDependencies": {
-    "ava": "^4.0.0-alpha.2",
     "eslint": "^7.28.0"
   },
   "scripts": {
-    "test": "ava form-urldecoded.spec.mjs",
+    "test": "node --test form-urldecoded.test.mjs",
     "lint": "eslint form-urldecoded.mjs",
     "start": "cp form-urldecoded.mjs form-urldecoded.js && sed -i 's/export default/module.exports =/' form-urldecoded.js",
     "prepare": "npm start && npm run lint && npm test"
