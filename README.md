@@ -2,7 +2,7 @@ form-urldecoded
 ===============
 **(c)[Frabarz][1], [Bumblehead][0]** [MIT-license](#license)
 
-[![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://github.com/iambumblehead/form-urldecoded/workflows/nodejs-ci/badge.svg)][2]
+[![npm version](https://badge.fury.io/js/form-urldecoded.svg)](https://badge.fury.io/js/form-urldecoded) [![Build Status](https://github.com/iambumblehead/form-urldecoded/workflows/test/badge.svg)][2]
 
 
 Returns an object from a [query string.][2]
